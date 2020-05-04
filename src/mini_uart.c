@@ -49,8 +49,7 @@ void uart_send(char c)
 	put32(AUX_MU_IO_REG, c);
 }
 
-void uart_send_string(const char *str)
+void putc(void *p, char c)
 {
-	for (int i = 0; str[i] != '\0'; i++)
-		uart_send(str[i]);
+	uart_send(c);
 }
